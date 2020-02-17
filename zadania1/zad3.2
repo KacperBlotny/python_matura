@@ -1,0 +1,14 @@
+print("podaj liczbe N elementów ")
+n = int(input())
+s = 0
+array = []
+
+print("podaj liczby ")
+for i in range(n):
+    array.append(int(input()))
+for j in range(n):
+    print(array[j])
+    s += array[j]
+
+print("Srednia ")
+print(s/n)
