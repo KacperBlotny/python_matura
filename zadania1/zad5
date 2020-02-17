@@ -1,0 +1,30 @@
+def jest(array):
+    r = array[1] - array[0]
+    q = array[1] / array[0]
+
+    if q == 1 | r == 1:
+        print("jest stały")
+        
+    if (array[1] + r == array[2]) & (array[2] + r == array[3]):
+        if r<0:          
+            print("jest arytmentyczny, malejący")
+        elif r>0:
+            print("jest arytmentyczny, rosnący")
+        
+    if (array[1] * q == array[2]) & (array[2] * q == array[3]):
+        if q<1:          
+            print("jest geometryczny, malejący")
+        elif (q>0) & (q!=1):
+            print("jest geometryczny, rosnący")
+
+
+              
+print("Podaj 4-cyfrowy ciąg" )
+array = []
+for i in range(4):
+    print("Podaj ",(i+1)," wyraz: ")
+    array.append(int(input()))
+    
+print("Twoj ciąg: ",array)
+
+jest(array)
