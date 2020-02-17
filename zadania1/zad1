@@ -1,0 +1,10 @@
+import random
+
+print("podaj dlugosc ciagu ")
+n = int(input())
+s = 0
+
+for i in range(0,n):
+    s += random.randint(1,100)
+
+print(s/n)
