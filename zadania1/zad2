@@ -1,0 +1,11 @@
+print("podaj liczbe N elementów ")
+n = int(input())
+z = n
+s = 0
+
+for i in range(n):
+    x = int(input())
+    s += x
+
+print("Srednia ")
+print(s/n)
