@@ -1,0 +1,23 @@
+import random
+
+print("Podaj parzysta liczbe >= 4 do utworzenia macierzy ")
+n = int(input())
+
+if (n%2==0) & (n>=4):
+    print("macierz n*n przy n równym = ", n)
+    array = [[random.randint(10,99)for array in range(n)] for y in range(n)]
+
+    for i in range(n):
+        print(array[i], end="\n")
+
+    s = 0
+    k = (n/2)
+    k = int(k)
+
+    print(array[k-1][k-1], array[k-1][k])
+    print(array[k][k-1], array[k][k])
+    
+
+else:
+    print("Liczba nie jest parzysta lub mniejsza od 4")
+
