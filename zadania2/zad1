@@ -1,0 +1,15 @@
+import random
+
+print("ilosc liczb w wierszu: ")
+n = int(input())
+print("liczba wierszy: ")
+k = int(input())
+
+file = open("plik.1.txt", "w")
+
+for i in range(k):
+    for j in range(n):
+        file.write(str(random.randrange(0,10000)) + " ")
+    file.write("\n")
+
+file.close() 
