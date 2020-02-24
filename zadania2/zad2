@@ -10,6 +10,4 @@ def generuj(n,k):
 
     file.close() 
 
-generuj(20,3)
-
-    
+generuj(5,240)
