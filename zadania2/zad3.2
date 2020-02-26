@@ -1,0 +1,96 @@
+import random
+
+def generuj(n):
+    file = open("plik.1.txt", "w")
+
+    for i in range(n):
+        file.write(str(random.randrange(0,10))+"\n")
+        
+    #file.write("\n")
+
+    file.close() 
+def suma():
+    total = 0
+
+    with open("plik.1.txt") as infile:
+        with open('results.txt', 'w') as outfile:
+
+            for line in infile:
+                try:
+                    num = int(line)
+                    total += num
+                    print(num, file=outfile)
+                except ValueError:
+                    VE = "VALUE ERROR"
+
+    print("SUM ", total)
+    print("AVG ", (total/n))
+
+def sort(n):
+    bands = list()
+    with open("plik.1.txt") as fin:
+        for line in fin:
+            bands.append(line.strip())
+    bands.sort()
+    #print(bands)
+    filename = "plik_sorted.txt"
+    with open(filename, 'w') as fout:
+        for band in bands:
+            fout.write(band + '\n')
+    print("MIN: ", bands[0])
+    print("MAX: ", bands[n-1])
+    if n%2 == 1:
+        L = int(n/2)
+        print("MED: ", bands[L])
+    else:
+        p = int(n/2)
+        k = p-1
+        med = int(int(bands[p]) + int(bands[k]))/2
+        print("MED: ", med)
+    dominanta(bands, n)
+        
+def dominanta(bands, n):
+    print(bands)
+    print(bands[0], bands[1], bands[2], bands[3], bands[4])
+    
+    s = 0
+    
+    for i in range(n):
+        if ((bands[i-1]) != (bands[i])):
+            s += 1
+        #print((array[i-1]), (array[i]))
+          
+    print("roznych liczb: ", s)
+
+    array = [[0 for i in range(s)] for i in range(s)]
+    
+
+    count = [0 for i in range(10)]
+    
+    for i in range(n):
+        c = int(bands[i])
+        count[c] += 1
+    print(count)
+    #count = [0 for i in range(s)]
+
+    dominanta1 = bands[0]
+    for i in range(n):
+        if (count[i+1]) > (count[i]):
+            dominanta1 = i+1
+    print("1ST DOMI: ", dominanta1)
+
+    
+
+    
+#___MAIN___#
+    
+print("ilosc liczb do wygenerowania >= 3: ")
+#n = int(input())
+n = 5
+
+if n >= 3:
+    generuj(n)
+    suma()
+    sort(n)
+else:
+    print("ERROR")
