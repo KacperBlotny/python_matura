@@ -1,0 +1,23 @@
+import random
+
+def generuj(n,k):
+    for x in range(0,6):
+        file = open(f"FILE.{x+1}.txt", "w")
+        for i in range(k):
+            for j in range(n):
+                file.write(str(random.randrange(0,10000)) + " ")
+            file.write("\n")
+
+    file.close() 
+
+n = 5
+k = 240
+generuj(n, k)
+
+arr = []
+inp = open ("FILE.2.txt","r")
+for line in inp.readlines():
+    arr.append([])
+    for i in line.split():
+        arr[-1].append(int(i))
+print(arr)
