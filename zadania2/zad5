@@ -1,0 +1,49 @@
+import random
+
+def generuj(n):
+    for i in range(1,7):
+        plik = open(f"p{i}.txt", "w")
+        for j in range(n//i):
+            for k in range(i):
+                plik.write(str(random.randrange(0,10000)) + " ")
+            plik.write("\n")
+
+    plik.close()
+
+
+generuj(1200)
+
+plik = open("p3.txt", "r")
+
+M = []
+
+for linia in plik:
+    M.append(list(map(int, linia.rstrip().split(" "))))
+    
+print(M)
+
+plik.close()
+
+licz = 0
+
+for A in M:
+    if (A[1]>A[0]) and (A[2]>A[1]):
+        print(A)
+        licz += 1
+print(licz)
+
+
+#string.split(separator, maxsplit)
+
+#Optional. Specifies how many splits to do.
+#Default value is -1, which is "all occurrences"
+
+
+#txt = "hello, my name is Peter, I am 26 years old"
+#x = txt.split(", ")
+#print(x)
+
+
+
+
+#a,b,c = linia.rstrip().split(" ") 
