@@ -1,0 +1,22 @@
+f = open("dane.txt", "r")
+
+T = []
+
+for x  in f:
+    R = list(map(int, x.rstrip().split()))
+    T.append(R)
+
+f.close()
+
+n = 0
+m = 255
+
+for i in range(200):
+    for j in range(320):
+        if ((T[i][j]) > n):
+            n = (T[i][j])
+        if ((T[i][j]) < m):
+            m = (T[i][j])
+
+print("najwieksza: ", n)
+print("najmniejsza: ", m)
